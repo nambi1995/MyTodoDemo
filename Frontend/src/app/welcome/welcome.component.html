@@ -3,3 +3,12 @@
 <div class="container"> Welcome {{name}}! 
     Click <a routerLink="/listtodos">here</a> to view todos
 </div>
+
+<div class="container">
+    Click here to get customized welcome message
+    <button (click)="getWelcomeMessage()" class="btn btn-success">Get Welcome Msg</button>
+</div>
+
+<div class="container" *ngIf="welcomeMessageFromService">
+    <h2>Your customized welcome message {{welcomeMessageFromService}}</h2>
+</div>
