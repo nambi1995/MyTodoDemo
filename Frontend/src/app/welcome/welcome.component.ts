@@ -27,10 +27,43 @@ export class WelcomeComponent implements OnInit {
       response => {
         console.log(response.message);
         this.welcomeMessageFromService = response.message;
+      },
+
+
+      error => {
+        console.log(error.error.message);
+        this.welcomeMessageFromService = error.error.message;
       }
+
     );
 
     console.log('Last line')
   }
+
+
+  handleSuccess() { }
+
+  handleError() { }
+
+
+  getWelcomeMessageWithPathVar() {
+    console.log(this.dataService.executeHelloWorlWithPathVar('NambiRajan'));
+    this.dataService.executeHelloWorlWithPathVar('Nambi fgjjhfjgh Rajan').subscribe(
+      response => {
+        console.log(response.message);
+        this.welcomeMessageFromService = response.message;
+      },
+
+
+      error => {
+        console.log(error.error.message);
+        this.welcomeMessageFromService = error.error.message;
+      }
+
+    );
+
+    console.log('Last line')
+  }
+
 
 }
