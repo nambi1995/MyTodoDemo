@@ -18,7 +18,7 @@ public class HelloWorldController {
 	
 	@GetMapping(path="/helloworld-bean")
 	private HelloWorldBean helloWorldBean() throws Exception {
-		return new HelloWorldBean("Hello World Nambi");
+		return new HelloWorldBean("Hello World Bean");
 		//throw new Exception("Internal server Error");
 	}
 	
