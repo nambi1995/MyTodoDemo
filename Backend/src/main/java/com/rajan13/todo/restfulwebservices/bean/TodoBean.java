@@ -10,6 +10,10 @@ public class TodoBean {
 	private Date targetDate;
 	private boolean isDone;
 
+	protected TodoBean() {
+		
+	}
+	
 	public TodoBean(long id, String userName, String description, Date targetDate, boolean isDone) {
 		super();
 		this.id = id;

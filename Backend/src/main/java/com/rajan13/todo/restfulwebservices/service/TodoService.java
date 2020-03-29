@@ -17,7 +17,7 @@ public class TodoService {
 	static {
 		todos.add(new TodoBean(++idCounter, "Nambi", "Learn DS", new Date(), false));
 		todos.add(new TodoBean(++idCounter, "Rajan", "Learn Oracle", new Date(), false));
-		todos.add(new TodoBean(++idCounter, "PNR", "Learn Kubernate", new Date(), false));
+		todos.add(new TodoBean(++idCounter, "PN Rajan", "Learn Kubernate", new Date(), false));
 	}
 
 	public List<TodoBean> findAll() {
@@ -33,13 +33,24 @@ public class TodoService {
 		return null;
 	}
 
-	private TodoBean findById(long id) {
+	public TodoBean findById(long id) {
 		for (TodoBean todo : todos) {
 			if (todo.getId() == id) {
 				return todo;
 			}
 		}
 		return null;
+	}
+
+	public TodoBean save(TodoBean todo) {
+		if (todo.getId() == -1 || todo.getId()==0) {
+			todo.setId(++idCounter);
+			todos.add(todo);
+		} else {
+			deleteById(todo.getId());
+			todos.add(todo);
+		}
+		return todo;
 	}
 
 }
