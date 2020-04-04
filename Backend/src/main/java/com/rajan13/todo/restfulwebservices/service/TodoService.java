@@ -6,35 +6,35 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.rajan13.todo.restfulwebservices.bean.TodoBean;
+import com.rajan13.todo.restfulwebservices.entity.Todo;
 
 @Service
 public class TodoService {
 
-	private static List<TodoBean> todos = new ArrayList<TodoBean>();
-	private static long idCounter = 0;
+	private static List<Todo> todos = new ArrayList<Todo>();
+	private static Long idCounter = 0L;
 
 	static {
-		todos.add(new TodoBean(++idCounter, "Nambi", "Learn DS", new Date(), false));
-		todos.add(new TodoBean(++idCounter, "Rajan", "Learn Oracle", new Date(), false));
-		todos.add(new TodoBean(++idCounter, "PN Rajan", "Learn Kubernate", new Date(), false));
+		todos.add(new Todo(++idCounter, "Nambi", "Learn DS", new Date(), false));
+		todos.add(new Todo(++idCounter, "Rajan", "Learn Oracle", new Date(), false));
+		todos.add(new Todo(++idCounter, "PN Rajan", "Learn Kubernate", new Date(), false));
 	}
 
-	public List<TodoBean> findAll() {
+	public List<Todo> findAll() {
 		return todos;
 	}
 
-	public TodoBean deleteById(long id) {
+	public Todo deleteById(long id) {
 
-		TodoBean todo = findById(id);
+		Todo todo = findById(id);
 		if (todos.remove(todo)) {
 			return todo;
 		}
 		return null;
 	}
 
-	public TodoBean findById(long id) {
-		for (TodoBean todo : todos) {
+	public Todo findById(long id) {
+		for (Todo todo : todos) {
 			if (todo.getId() == id) {
 				return todo;
 			}
@@ -42,7 +42,7 @@ public class TodoService {
 		return null;
 	}
 
-	public TodoBean save(TodoBean todo) {
+	public Todo save(Todo todo) {
 		if (todo.getId() == -1 || todo.getId()==0) {
 			todo.setId(++idCounter);
 			todos.add(todo);
