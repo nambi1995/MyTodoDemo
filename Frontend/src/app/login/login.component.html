@@ -1,11 +1,21 @@
-
 <h1>Login!</h1>
 
-<div class="container">
-<div class="alert alert-warning" *ngIf='invalid'>Invalid credentials</div>
-<div>
-    User Name : <input type="text" name="username" [(ngModel)]="username">
-    Password  : <input type="Password" name="Password" [(ngModel)]="password">
-    <button (click)="handleJWTAuthLogin()" class="btn btn-success">Login</button>
-</div>
+<div class="container-fluid form-group">
+    <div class="alert alert-warning" *ngIf='invalid'>Invalid credentials</div>
+    <div>
+        <div>
+            <img src="src\assets\images\bg-01.jpg" alt="..." class="img-thumbnail">
+        </div>
+        <div>
+            <label  for="username"> Username :  </label>
+            <input type="text" name="username" [(ngModel)]="username" class="form-control form-control-sm">
+        </div>
+        <div>
+            <label for="password">Password :</label>  
+            <input type="Password" name="Password" [(ngModel)]="password" class="form-control form-control-sm">
+        </div>
+        <div>
+            <button (click)="handleJWTAuthLogin()" class="btn btn-success">Login</button>
+        </div>
+    </div>
 </div>
