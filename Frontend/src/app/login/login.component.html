@@ -1,10 +1,9 @@
-<h1>Login!</h1>
 
-<div class="container-fluid form-group">
+<div class="container-fluid form-group d-flex  justify-content-center">
     <div class="alert alert-warning" *ngIf='invalid'>Invalid credentials</div>
     <div>
         <div>
-            <img src="src\assets\images\bg-01.jpg" alt="..." class="img-thumbnail">
+            <img src="\assets\images\bg-01.jpg" alt="..." class="img-thumbnail">
         </div>
         <div>
             <label  for="username"> Username :  </label>
@@ -13,7 +12,7 @@
         <div>
             <label for="password">Password :</label>  
             <input type="Password" name="Password" [(ngModel)]="password" class="form-control form-control-sm">
-        </div>
+        </div><br/>
         <div>
             <button (click)="handleJWTAuthLogin()" class="btn btn-success">Login</button>
         </div>
